@@ -1,9 +1,9 @@
 {
   "name": "gatsby-blog",
   "private": true,
-  "description": "A sample blog website built using Gatsby connected to Prismic CMS",
+  "description": "Sheltertech site connected to Prismic CMS",
   "version": "0.1.0",
-  "author": "Levi Gable",
+  "author": "Sheltertech.org",
   "dependencies": {
     "gatsby": "^2.1.32",
     "gatsby-plugin-manifest": "^2.0.24",
