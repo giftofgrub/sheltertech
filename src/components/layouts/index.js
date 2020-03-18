@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Header from './Header'
 import Footer from './Footer'
+import Intercom from 'react-intercom'
 import '../../stylesheets/main.scss'
 
 export default props => (
@@ -46,7 +47,7 @@ const Layout = ( props ) => {
       <main>
         { props.children }
       </main>
-
+      <Intercom appID="w50oz3tb"/>
       <Footer/>
     </Fragment>
 	)
