@@ -1,13 +1,14 @@
 import React from 'react'
-import { Link } from "gatsby"
-import '../../../stylesheets/components/layouts/_header.scss'
+import { Link } from 'gatsby'
+import SlideMenu from '../SlideMenu'
+import '../../../stylesheets/components/layouts/Header.scss'
 
 const Header = () => (
   <header className='site--header'>
     <div className='site--header--wrapper'>
       <h1 className='site--header--logo'><Link to='/' >ShelterTech</Link></h1>
       <nav className='site--header--nav'>
-        {/* <SlideMenu /> */}
+        <SlideMenu />
         <ul>
           <li><Link to='/'>Programs</Link></li>
           <li><Link to='/annual-report-2018'>Impact</Link></li>

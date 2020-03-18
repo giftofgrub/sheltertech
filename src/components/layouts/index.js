@@ -44,9 +44,7 @@ const Layout = ( props ) => {
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       </Helmet>
       <Header />
-      <main>
-        { props.children }
-      </main>
+      { props.children }
       <Intercom appID="w50oz3tb"/>
       <Footer/>
     </Fragment>
