@@ -6,6 +6,7 @@
   "author": "Sheltertech.org",
   "dependencies": {
     "gatsby": "^2.1.32",
+    "gatsby-plugin-intercom-spa": "^0.2.0",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.9",

@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Intercom from 'react-intercom' 
 import { StaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Header from './Header'
@@ -48,7 +47,6 @@ const Layout = ( props ) => {
         { props.children }
       </main>
 
-      <Intercom appID="w50oz3tb" />
       <Footer/>
     </Fragment>
 	)

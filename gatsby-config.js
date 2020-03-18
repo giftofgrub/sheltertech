@@ -45,6 +45,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-intercom-spa',
+      options: {
+        app_id: 'w50oz3tb',
+        include_in_development: true,
+        delay_timeout: 0
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
