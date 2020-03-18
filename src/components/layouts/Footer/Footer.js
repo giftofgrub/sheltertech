@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default () =>
+const Footer = () => (
   <footer className="site--footer">
     <nav className='site--footer--nav'>
       <ul>
@@ -23,3 +23,6 @@ export default () =>
       </ul>
     </div>
   </footer>
+)
+
+export default Footer
