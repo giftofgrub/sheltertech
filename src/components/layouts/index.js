@@ -6,7 +6,7 @@ import Footer from './Footer'
 import Intercom, { IntercomAPI } from 'react-intercom'
 import '../../stylesheets/app.scss'
 
-IntercomAPI('trackEvent', window.location.href)
+// IntercomAPI('trackEvent', window.location.href)
 
 export default props => (
   <StaticQuery
