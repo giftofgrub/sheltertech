@@ -9,7 +9,7 @@
 }
 
 .home--hero {
-  background-image: url('./assets/hero.jpg');
+  background-image: url('../../_assets/images/hero.jpg');
   background-size: cover;
   background-position: center center;
   height: 50vh;
@@ -102,7 +102,7 @@
 .home--founder--image {
   width: 50%;
   height: 100%;
-  background-image: url(./assets/darcel-story.jpg);
+  background-image: url('../../_assets/images/darcel-story.jpg');
   background-position: center;
   background-size: cover;
   @include r_max($screen-sm) {
