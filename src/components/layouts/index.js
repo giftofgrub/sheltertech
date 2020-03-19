@@ -3,8 +3,10 @@ import { StaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Header from './Header'
 import Footer from './Footer'
-import Intercom from 'react-intercom'
-import '../../stylesheets/main.scss'
+import Intercom, { IntercomAPI } from 'react-intercom'
+import '../../stylesheets/app.scss'
+
+IntercomAPI('trackEvent', window.location.href)
 
 export default props => (
   <StaticQuery
@@ -27,11 +29,6 @@ const Layout = ( props ) => {
   const title = props.data.site.siteMetadata.title
   const description = props.data.site.siteMetadata.description
 
-  // Load the Prismic edit button
-  if(typeof window !== 'undefined' && window.prismic) {
-    window.prismic.setupEditButton()
-  }
-
 	return(
     <Fragment>
       <Helmet>
@@ -43,10 +40,12 @@ const Layout = ( props ) => {
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css"></link>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       </Helmet>
-      <Header />
-      { props.children }
-      <Intercom appID="w50oz3tb"/>
-      <Footer/>
+      <div className='app'>
+        <Header />
+        { props.children }
+        <Intercom appID="w50oz3tb"/>
+        <Footer/>
+      </div>
     </Fragment>
 	)
 }
