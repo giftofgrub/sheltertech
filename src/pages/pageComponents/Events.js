@@ -1,11 +1,45 @@
 import React from 'react'
 import EventsList from '../../components/EventsList'
+import { StaticQuery, graphql } from 'gatsby'
 import '../../stylesheets/pages/Events.scss'
 
+
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query EventQuery{
+        prismic{
+          allEvents {
+            edges {
+              node {
+                title
+                description
+                datetime
+                cost
+                location_address
+                location_coordinates
+                imagesource
+                event_link {
+                  _linkType
+                  ... on PRISMIC__ExternalLink {
+                    _linkType
+                    url
+                  }
+                }
+                _linkType
+              }
+            } 
+          }
+        }
+      }
+    `}
+    render={ data => <Events data={ data } { ...props }/> }
+  />
+)
+
 const Events = (props) => {
-  // const eventSample = new Date(props.events[0].node.event_datetime)
-  const upcomingEvents = props.events.filter( evt => (new Date(evt.node.datetime)) > Date.now())
-  const pastEvents = props.events.filter( evt => (new Date(evt.node.datetime)) < Date.now())
+  const upcomingEvents = props.data.prismic.allEvents.edges.filter( evt => (new Date(evt.node.datetime)) > Date.now())
+  const pastEvents = props.data.prismic.allEvents.edges.filter( evt => (new Date(evt.node.datetime)) < Date.now())
   
   return (
     <div className='events'>
@@ -22,5 +56,3 @@ const Events = (props) => {
   </div>
   )
 }
-
-export default Events
