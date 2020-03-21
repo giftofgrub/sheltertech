@@ -5,22 +5,14 @@ module.exports = {
   siteMetadata: {
     title: `ShelterTech - Technology for the underserved`,
     description: `Blog example for Gatsby & Prismic`,
-    author: `@levimykel`,
+    author: `Sheltertech`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-prismic-graphql`,
       options: {
-        repositoryName: repo[1], // Loads the repo name from prismic configuration
-        path: '/preview',
-        previews: true,
-        pages: [{
-          type: 'Post',
-          match: '/blog/:uid',
-          path: '/blog-preview',
-          component: require.resolve('./src/templates/post.js')
-        }]
+        repositoryName: 'sheltertech'
       }
     },
     `gatsby-plugin-sass`,

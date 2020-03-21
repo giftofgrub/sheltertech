@@ -1,6 +1,6 @@
 import React from 'react'
 import { RichText } from 'prismic-reactjs'
-import { graphql } from 'gatsby';
+import { graphql } from 'gatsby'
 import Layout from '../components/layouts'
 import BlogPosts from '../components/BlogPosts'
 
