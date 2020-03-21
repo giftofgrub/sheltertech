@@ -13,10 +13,16 @@ export const query = graphql`
           description
           datetime
           cost
-          
+          location_address
           location_coordinates
-          
           imagesource
+          event_link {
+            _linkType
+            ... on PRISMIC__ExternalLink {
+              _linkType
+              url
+            }
+          }
           _linkType
         }
       } 
