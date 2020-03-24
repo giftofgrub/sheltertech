@@ -24,7 +24,7 @@ const GetInvolved = (props) => {
           <h2>Join the Team</h2>
           <h3>Apply your skills to solving homelessness!<br />With a commitment of a few hours a week, you can join Sheltertech, an all-volunteer organisation building tech products for the homeless and underserved communities of San Francisco.</h3>
         </div>
-        <PositionsList positions/>
+        <PositionsList positions={positions}/>
 
         <div className='content--header'>
           <a className='anchor' id='p' />
@@ -61,7 +61,6 @@ export default props => (
                     url
                   }
                 }
-                _linkType
               }
             } 
           }
@@ -70,7 +69,13 @@ export default props => (
               node {
                 title
                 description
-                _linkType
+                link {
+                  _linkType
+                  ... on PRISMIC__ExternalLink {
+                    _linkType
+                    url
+                  }
+                }
               }
             }
           }
