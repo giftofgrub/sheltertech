@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import Header from './Header'
 import Footer from './Footer'
 import Intercom, { IntercomAPI } from 'react-intercom'
+import favicon from '../../images/favicon.ico'
 import '../../stylesheets/app.scss'
 
 // IntercomAPI('trackEvent', window.location.href)
@@ -37,6 +38,7 @@ const Layout = ( props ) => {
         
         <title>{ title }</title>
         <meta name="description" content={ description } />
+        <link rel="icon" href={favicon} />
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css"></link>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       </Helmet>

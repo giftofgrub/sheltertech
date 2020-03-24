@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../stylesheets/components/Home/Home.scss'
+import '../../stylesheets/pages/Home.scss'
 
 //import '../../stylesheets/components/Home/assets'
 // import images
@@ -31,17 +31,17 @@ const Home = () => (
       <h2>Our Programs</h2>
       <ul className='home--cards'>
         <li className='home--cards--card'>
-          <img src={ImageShelterConnectRound} />
+          <img src={ImageShelterConnectRound} alt='shelterconnect-logo'/>
           <a href='/#shelterconnect'><h4>ShelterConnect</h4></a>
           <p>Free Wifi access in shelters<br />and transitional housing</p>
         </li>
         <li className='home--cards--card'>
-          <a href='https://askdarcel.org/' target='_blank'><img src={ImageAskDarcelRound} /></a>
-          <h4><a href='https://askdarcel.org/' target='_blank'>AskDarcel</a></h4>
+          <a href='https://askdarcel.org/' target='_blank' rel='noopener noreferrer'><img src={ImageAskDarcelRound} alt='askdarcel-logo'/></a>
+          <h4><a href='https://askdarcel.org/' target='_blank' rel='noopener noreferrer'>AskDarcel</a></h4>
           <p>Find housing and human services you're eligibile for</p>
         </li>
         <li className='home--cards--card'>
-          <img src={ImageCaseyRound} />
+          <img src={ImageCaseyRound} alt='casey-logo'/>
           <a href='/#casey'><h4>Casey</h4></a>
           <p>Case management, powered by AI, accesible via voice and sms</p>
         </li>
@@ -63,23 +63,35 @@ const Home = () => (
       <div className='home--programs--program'>
         <div className='max-width'>
           <div className='home--programs--program--image' id='shelterconnect'>
-            <img src={ImageShelterconnectFeature} className='shelterconnect-feature' />
+            <img 
+              src={ImageShelterconnectFeature} 
+              className='shelterconnect-feature' 
+              alt='shelterconnect-feature'/>
           </div>
           <div className='home--programs--program--text'>
-            <img src={ImageShelterconnectLogo} className='home--programs--program--text--logo' />
+            <img 
+              src={ImageShelterconnectLogo} 
+              className='home--programs--program--text--logo' 
+              alt='shelterconnect-logo'/>
             <h3>Wifi Where It's Needed Most</h3>
             <p>People experiencing homelessness rely on the internet to apply for housing and benefits, schedule appointments with doctors and case managers, search for jobs, and stay in touch with family and friends. It's a lifeline for getting back on your feet.</p>
             <p>ShelterConnect works with internet service providers to offer free wifi in shelters and transitional housing facilties.</p>
             <p>So far ShelterConnect has installed and provided free wifi in three shelters and seven transitional housing facilities in San Francisco, providing free wifi to over 3000 people in need.</p>
-            <p>Learn more about <a href='http://sheltertech.org/shelterconnect-flyer.pdf' target='_blank'>ShelterConnect.</a></p>
+            <p>Learn more about <a href='http://sheltertech.org/shelterconnect-flyer.pdf' target='_blank' rel='noopener noreferrer'>ShelterConnect.</a></p>
             <div className='home--programs--program--text--further-reading'>
               <h5>Read about it on</h5>
               <span className=''>
-                <a target='_blank' rel='noopener' href='https://www.sfchronicle.com/business/article/Smartphones-are-a-lifeline-for-the-young-13582809.php'>
-                  <img src={ImageChronicle} className='home--programs--program--text--chronicle-image' />
+                <a target='_blank' rel='noopener noreferrer' href='https://www.sfchronicle.com/business/article/Smartphones-are-a-lifeline-for-the-young-13582809.php'>
+                  <img 
+                    src={ImageChronicle} 
+                    className='home--programs--program--text--chronicle-image' 
+                    alt='sfchronicle-logo'/>
                 </a>
-                <a target='_blank' rel='noopener' href='https://ww2.kqed.org/news/2015/05/18/a-homeless-man-brings-wi-fi-to-san-francisco-shelters'>
-                  <img src={ImageKQED} className='home--programs--program--text--kqed-image' />
+                <a target='_blank' rel='noopener noreferrer' href='https://ww2.kqed.org/news/2015/05/18/a-homeless-man-brings-wi-fi-to-san-francisco-shelters'>
+                  <img 
+                    src={ImageKQED} 
+                    className='home--programs--program--text--kqed-image' 
+                    alt='kqed-logo'/>
                 </a>
               </span>
             </div>
@@ -90,18 +102,27 @@ const Home = () => (
       <div className='home--programs--program'>
         <div className='max-width'>
           <div className='home--programs--program--text'>
-            <img src={ImageAskDarcelLogo} className='home--programs--program--text--logo' />
+            <img 
+              src={ImageAskDarcelLogo} 
+              className='home--programs--program--text--logo' 
+              alt='askdarcel-logo'/>
             <h3>Find Human Services that are Right For You</h3>
             <p>In November 2017, ShelterTech began collaborating with the SF Bar Association's Homeless Advocacy Project to build the most robust housing and human services directory in San Francisco.</p>
             <p>Through the AskDarcel website, case managers, city employees, and people experiencing homelessness can find thousands of homelessness, housing, health, job, education, and other human services nearby and learn how to access them.</p>
             <p>Visit <a href='http://askdarcel.org'>AskDarcel.org</a> for more info.</p>
             <a href='https://www.citylab.com/cityfixer/2015/10/how-apps-can-help-and-harm-the-homeless/412780/' className='home--programs--program--text--further-reading'>
               <h5>Read about it on</h5>
-              <img src={ImageCitylab} className='home--programs--program--text--citylab-image' />
+              <img 
+                src={ImageCitylab} 
+                className='home--programs--program--text--citylab-image' 
+                alt='citylab-logo'/>
             </a>
           </div>
           <div className='home--programs--program--image'>
-            <img src={ImageAskDarcelFeature} className='shelterconnect-feature' />
+            <img 
+              src={ImageAskDarcelFeature} 
+              className='shelterconnect-feature' 
+              alt='shelterconnect-feature'/>
           </div>
         </div>
       </div>
@@ -109,10 +130,16 @@ const Home = () => (
       <div className='home--programs--program'>
         <div className='max-width'>
           <div className='home--programs--program--image' id='casey'>
-            <img src={ImageCaseyFeature} className='casey-feature' />
+            <img 
+              src={ImageCaseyFeature} 
+              className='casey-feature' 
+              alt='casey-feature'/>
           </div>
           <div className='home--programs--program--text'>
-            <img src={ImageCaseyLogo} className='home--programs--program--text--logo casey-logo' />
+            <img 
+              src={ImageCaseyLogo} 
+              className='home--programs--program--text--logo casey-logo' 
+              alt='casey-feature'/>
             <h3>Casey — Self Service Case Management</h3>
             <p>Utilizing data from AskDarcel and hundreds of research hours, Casey provides step by step guides for many of the most common problems faced by people at risk of or experiencing homelessness.</p>
             <p>Casey guides are delivered where they're needed most; paper guides will be available in shelters and resource centers early 2019.</p>

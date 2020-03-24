@@ -1,5 +1,5 @@
 import React from 'react'
-import Events from './pageComponents/Events'
+import GetInvolved from './pageComponents/GetInvolved'
 import Layout from '../components/layouts'
 
 
@@ -7,7 +7,7 @@ export default (props) => {
 
   return(
     <Layout>
-      <Events />
+      <GetInvolved />
     </Layout>
   )
 }
