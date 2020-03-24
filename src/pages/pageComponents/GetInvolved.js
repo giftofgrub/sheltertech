@@ -6,7 +6,8 @@ import '../../stylesheets/pages/GetInvolved.scss'
 
 const GetInvolved = (props) => {
   const upcomingEvents = props.data.prismic.allEvents.edges.filter( evt => (new Date(evt.node.datetime)) > Date.now())
-  
+  const positions = props.data.prismic.allOpen_roles.edges
+
   return (
     <div className='volunteer'>
       <a className='anchor' id='e' />
@@ -23,7 +24,7 @@ const GetInvolved = (props) => {
           <h2>Join the Team</h2>
           <h3>Apply your skills to solving homelessness!<br />With a commitment of a few hours a week, you can join Sheltertech, an all-volunteer organisation building tech products for the homeless and underserved communities of San Francisco.</h3>
         </div>
-        <PositionsList />
+        <PositionsList positions/>
 
         <div className='content--header'>
           <a className='anchor' id='p' />
@@ -63,6 +64,15 @@ export default props => (
                 _linkType
               }
             } 
+          }
+          allOpen_roles {
+            edges {
+              node {
+                title
+                description
+                _linkType
+              }
+            }
           }
         }
       }
