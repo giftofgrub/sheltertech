@@ -5,8 +5,9 @@ const TeamMemberList = ({ name, members }) => {
   const memberList = members.map( member => {
     const {first_name, last_name, email, image} = member.team_member
     const imageSrc = image.url
+    
     return (
-      <li className={`team-list--item`}>
+      <li className={`team-list--item`} style={{backgroundImage: `url(${imageSrc})`}}>
         <div className='team-list--item--details'>
           <p className='team-list--item--name'>
             <a href={`mailto:${email}`}>
