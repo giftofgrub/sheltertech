@@ -39,13 +39,11 @@ const Layout = ( props ) => {
         <title>{ title }</title>
         <meta name="description" content={ description } />
         <link rel="icon" href={favicon} />
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css"></link>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       </Helmet>
       <div className='app'>
         <Header />
         { props.children }
-        <Intercom appID="w50oz3tb"/>
+        {/* <Intercom appID="w50oz3tb"/> */}
         <Footer/>
       </div>
     </Fragment>

@@ -10,6 +10,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: 'gatsby-plugin-intercom-spa',
+      options: {
+        app_id: 'w50oz3tb',
+        include_in_development: true,
+        delay_timeout: 1000
+      }
+    },
+    {
       resolve: `gatsby-source-prismic-graphql`,
       options: {
         repositoryName: 'sheltertech'
