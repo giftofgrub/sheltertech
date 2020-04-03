@@ -11,7 +11,7 @@ const Header = () => (
         <SlideMenu />
         <ul>
           <li><Link to='/'>Programs</Link></li>
-          <li><Link to='/annual-report-2018'>Impact</Link></li>
+          <li><Link to='/annual-report'>Impact</Link></li>
           <li><Link to='/events'>Events</Link></li>
           <li><Link to='/get-involved'>Get Involved</Link></li>
           <li><Link to='/team'>Team</Link></li>

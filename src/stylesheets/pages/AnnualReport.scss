@@ -1,4 +1,4 @@
-@import '../../../styles/utils/all';
+@import '../utils/all';
 
 .annual-report {
   display: flex;
@@ -78,7 +78,7 @@
   width: 100%;
   height: 0;
   padding-bottom: 45%;
-  background-image: url(../assets/team-growth.png);
+  background-image: url(../_assets/images/team-growth.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom left;
@@ -89,6 +89,7 @@
     padding-bottom: 80%;
   }
 }
+
 
 .annual-report--goals {
   margin-top: 100px;
@@ -202,7 +203,7 @@
 
 .annual-report--askdarcel {
   background-color: #276CE5;
-  background-image: url(../assets/askdarcel-bg.svg);
+  background-image: url(../_assets/images/askdarcel-bg.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right bottom;
