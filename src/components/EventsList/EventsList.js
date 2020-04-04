@@ -6,7 +6,7 @@ const renderEventCard = (evt) => {
   const date = new Date(evt.node.datetime)
   const formattedDate = `${date.toDateString()} ${date.toLocaleTimeString('en-US')}`
   return (
-    <li key={evt.node.id} className='event-card' onClick={() => window.open(event_link, '_blank')}>
+    <li key={evt.node.id} className='event-card'><a href={event_link} target="_blank" className="event-link">
       <p className='event-card--cost'>{cost}</p>
       <img className='event-card--image' src={imagesource.url} alt={imagesource.alt}/>
       <div className='event-card--details'>
@@ -17,7 +17,7 @@ const renderEventCard = (evt) => {
         </div>
         <small>{location_address}</small>
       </div>
-    </li>
+    </a></li>
   )
 }
 
