@@ -19,7 +19,7 @@
     "prismic-javascript": "^2.0.1",
     "prismic-reactjs": "^0.3.2",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
+    "react": "^16.13.1",
     "react-burger-menu": "^2.6.13",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
