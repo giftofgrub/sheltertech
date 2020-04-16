@@ -1,12 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Predicates } from 'prismic-javascript'
 import EventsList from '../../components/EventsList'
-import { StaticQuery, graphql } from 'gatsby'
+import PrismicClient from '../../PrismicClient'
 import '../../stylesheets/pages/Events.scss'
 
 const Events = (props) => {
-  const upcomingEvents = props.data.prismic.allEvents.edges.filter( ({ node }) => (new Date(node.datetime)) > Date.now())
-  const pastEvents = props.data.prismic.allEvents.edges.filter( ({ node }) => (new Date(node.datetime)) < Date.now())
+  const [allEvents, setAllEvents] = useState([])
   
+  useEffect( () => {
+    const fetchPrismicData = async () => {
+      try {
+        const response = await PrismicClient.query(
+          Predicates.at('document.type', 'event')
+        )
+        const events = response.results.map( elem => (
+          elem.data
+        ))
+        setAllEvents(events)
+        
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    fetchPrismicData()
+   
+  })
+
   return (
     <div className='events'>
       <div className='content'>
@@ -15,43 +35,12 @@ const Events = (props) => {
           <h2>Events</h2>
           <h3>Whether you're looking to volunteer, learn about homelessness, or just meet people from different walks of life—our events are all about bringing people together.</h3>
         </div>
-        <EventsList events={upcomingEvents}/>
+        <EventsList events={allEvents.filter( evt => (new Date(evt.datetime) >= Date.now()) )}/>
         <h3 className='events--past'>Past Events</h3>
-        <EventsList events={pastEvents}/>
+        <EventsList events={allEvents.filter( evt => (new Date(evt.datetime) < Date.now()) )}/>
       </div>
     </div>
   )
 }
 
-export default props => (
-  <StaticQuery
-    query={graphql`
-      query EventQuery{
-        prismic{
-          allEvents {
-            edges {
-              node {
-                title
-                description
-                datetime
-                cost
-                location_address
-                location_coordinates
-                imagesource
-                event_link {
-                  _linkType
-                  ... on PRISMIC__ExternalLink {
-                    _linkType
-                    url
-                  }
-                }
-                _linkType
-              }
-            } 
-          }
-        }
-      }
-    `}
-    render={ data => <Events data={ data } { ...props }/> }
-  />
-)
+export default Events

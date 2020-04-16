@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Prismic from 'prismic-javascript'
+import { Predicates } from 'prismic-javascript'
+import PrismicClient from '../PrismicClient'
 import Layout from '../components/layouts'
 import '../stylesheets/pages/Team.scss'
-
-const api = "https://sheltertech.prismic.io/api/v2"
-const client = Prismic.client(api)
 
 const Secret = () => {
   const [team, setTeam] = useState([{first_name: "sample", email: "sample@sample.org"}])
@@ -12,8 +10,8 @@ const Secret = () => {
   useEffect( () => {
     const fetchPrismicData = async () => {
       try {
-        const response = await client.query(
-          Prismic.Predicates.at('document.type', 'team_member')
+        const response = await PrismicClient.query(
+          Predicates.at('document.type', 'team_member')
         )
         const teamMembers = response.results.map( elem => (
           elem.data
