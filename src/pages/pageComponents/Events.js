@@ -22,9 +22,7 @@ const Events = (props) => {
         console.error(error)
       }
     }
-
     fetchPrismicData()
-   
   })
 
   return (
