@@ -1,19 +1,20 @@
 import React from 'react'
 
-const renderPositionListItem = ({ node }) => {
-  const {title, description} = node
-  const link = node.link.url
+const renderPositionListItem = (position) => {
+  const {title, description} = position
+  const link = position.link ? position.link.url : "/"
+  
   return (
     <li className='positions-list--item'>
       <a 
         className='positions-list--item--title' 
-        href={link}>
-          {title}
+        href={link || "/"}>
+          {title || ""}
       </a>
       <a 
         className='positions-list--item--desc' 
-        href={link}>
-          {description}
+        href={link || "/"}>
+          {description || ""}
       </a>
     </li>
   )
