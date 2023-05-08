@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Sheltertech.org",
   "dependencies": {
-    "gatsby": "^2.1.32",
+    "gatsby": "^2.32.13",
     "gatsby-plugin-intercom-spa": "^0.2.0",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^3.1.2",
